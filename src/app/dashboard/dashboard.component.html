@@ -1,0 +1,24 @@
+<mat-drawer-container class="dashboard-container" autosize>
+  <!-- SIDEBAR -->
+  <mat-drawer [opened]="true" #drawer class="sidenav" mode="side" >
+    <p>MENU</p>
+    <ul>
+      <li>
+        <a routerLink="students" style="background-color: blueviolet;">Alumnos</a>
+      </li>
+      <li>
+        <a routerLink="courses" style="background-color: blueviolet;">Cursos</a>
+      </li>
+      <li>
+        <a routerLink="commissions" style="background-color: blueviolet;">Comisiones</a>
+      </li>
+    </ul>
+  </mat-drawer>
+  <!-- HEADER TOOLBAR -->
+  <app-header (toggleSidebar)="drawer.toggle()"></app-header>
+  <!-- ENVOLTURA DE PAGINAS -->
+  <app-page-wrapper>
+    <!-- OUTLET DE RUTAS -->
+    <router-outlet></router-outlet>
+  </app-page-wrapper>
+</mat-drawer-container>
